@@ -1,0 +1,73 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  text-decoration: none;
+}
+
+/* CSS FOR NAVBAR */
+nav {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.nav-buttons {
+  display: inline-flex;
+  margin-left: 650px;
+}
+
+.webpage-butt {
+  margin-left: 100px;
+  margin-top: 40px;
+}
+
+.login-butt {
+  margin-left: 85px;
+  margin-top: 32px;
+  width: 90px;
+  height: 45px;
+}
+
+.register-butt {
+  margin-left: 50px;
+  margin-top: 32px;
+  width: 90px;
+  height: 45px;
+}
+
+/* CSS FOR GALLERY */
+.banner-text {
+  font-family: "Zilla Slab", serif;
+  font-weight: 600;
+  font-style: normal;
+  bottom: 400px;
+  left: 300px;
+}
+
+.down-text {
+  bottom: 320px;
+  left: 600px;
+}
+
+/* CSS FOR INFO */
+.features {
+  width: 100%;
+  height: 350px;
+}
+
+.feature-tile {
+  margin-left: 340px;
+}
+
+.feature-icon {
+  width: 150px;
+  height: 150px;
+}
