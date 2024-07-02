@@ -1,12 +1,13 @@
-import React from 'react'
 import Navbar from "./components/Navbar"
+import Gallery from "./components/Gallery"
 import './App.css'
 
 function App() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar className="fixed"/>
+      <Gallery />
     </div>
   );
 }

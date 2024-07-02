@@ -10,6 +10,7 @@ body {
 /* CSS FOR NAVBAR */
 nav {
   display: flex;
+  margin-bottom: 30px;
 }
 
 .logo {
@@ -43,3 +44,11 @@ nav {
 }
 
 /* CSS FOR GALLERY */
+.banner-text {
+  font-family: "Zilla Slab", serif;
+  font-weight: 600;
+  font-style: normal;
+  bottom: 400px;
+  left: 300px;
+}
+

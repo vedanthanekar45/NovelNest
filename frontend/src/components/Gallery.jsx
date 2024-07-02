@@ -5,20 +5,21 @@ const Gallery = () => {
     const [randomImage, setRandomImage] = React.useState(null);
   
     React.useEffect(() => {
-      const getRandomImage = () => {
+      function getRandomImage() {
         const randomIndex = Math.floor(Math.random() * gallery.length);
         return gallery[randomIndex];
-      };
-  
+      }
       setRandomImage(getRandomImage());
     }, []);
 
     if (!randomImage) return <div>Loading...</div>;
 
   return (
-    <div>
-      <h1>Gallery</h1>
-      <img src={randomImage.src} alt={randomImage.alt} style={{ maxWidth: '100%', height: 'auto' }} />
+    <div className="relative object-contain">
+      <img src={randomImage.src} style={{ maxWidth: '100%', height: 'auto' }} />
+      <h1 className="banner-text absolute text-7xl text-white">
+        Don`t get your books piled up ever again!
+      </h1>
     </div>
   );
 };
