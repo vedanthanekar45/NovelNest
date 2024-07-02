@@ -57,3 +57,17 @@ nav {
   left: 600px;
 }
 
+/* CSS FOR INFO */
+.features {
+  width: 100%;
+  height: 350px;
+}
+
+.feature-tile {
+  margin-left: 340px;
+}
+
+.feature-icon {
+  width: 150px;
+  height: 150px;
+}
