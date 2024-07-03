@@ -18,8 +18,8 @@ const Gallery = () => {
     <div className="relative object-contain">
       <img src={randomImage.src} style={{ maxWidth: '100%', height: 'auto' }} />
       <h1 className="banner-text absolute text-7xl text-center text-white">
-        One stop place <br></br>
-        For everything about books!
+        One stop place for everything <br></br>
+        about a man`s best friend!
       </h1>
     </div>
   );
