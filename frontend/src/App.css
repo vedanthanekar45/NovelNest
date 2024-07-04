@@ -3,14 +3,11 @@
   padding: 0px;
 }
 
-body {
-  text-decoration: none;
-}
-
 /* CSS FOR NAVBAR */
 nav {
   display: flex;
   margin-bottom: 30px;
+  text-decoration: none;
 }
 
 .logo {
@@ -72,4 +69,19 @@ nav {
   font-family: "Zilla Slab", serif;
   font-weight: 600;
   font-style: normal;
+}
+
+/* CSS FOR LOGIN PAGE */
+.login-box {
+  width: 500px;
+  height: 500px;
+  border-radius: 25px;
+  box-shadow: 0.5px 0.5px 1px 1px #006302;
+}
+
+.register-box {
+  width: 500px;
+  height: 650px;
+  border-radius: 25px;
+  box-shadow: 0.5px 0.5px 1px 1px #006302;
 }
