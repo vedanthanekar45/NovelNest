@@ -12,7 +12,7 @@ function Login() {
         axios.post('http://localhost:3000/register', {username, password})
         .then((result) => console.log(result))
         .catch((err) => console.log(err))
-        navigate('/login')
+        navigate('/')
     }
 
     return (
