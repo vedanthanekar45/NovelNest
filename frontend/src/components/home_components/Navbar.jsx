@@ -7,7 +7,7 @@ function Navbar() {
                     <a href="#"><h2>NovelNest</h2></a>
                 </div>
                 <div className="nav-buttons">
-                    <a href="#"><h3 className="webpage-butt text-xl text-center hover:text-[#0d9221]">
+                    <a href="/"><h3 className="webpage-butt text-xl text-center hover:text-[#0d9221]">
                         Home
                     </h3></a>
                     <a href="#"><h3 className="webpage-butt text-xl text-center hover:text-[#0d9221]">
@@ -19,18 +19,18 @@ function Navbar() {
                     <a href="#"><h3 className="webpage-butt text-xl text-center hover:text-[#0d9221]">
                         About Us
                     </h3></a>
-                    <button className="login-butt text-white cursor-pointer outline-none 
+                    <a href="/login"><button className="login-butt text-white cursor-pointer outline-none 
                     border-none text-base text-center transition-all 
                     duration-300 ease-linear relative bg-[#0d9221] 
                     rounded-[10px] hover:bg-[#2db40c]">
                         Login
-                    </button>
-                    <button className="register-butt text-white cursor-pointer outline-none 
+                    </button></a>
+                    <a href="/register"><button className="register-butt text-white cursor-pointer outline-none 
                     border-none text-base text-center transition-all 
                     duration-300 ease-linear relative bg-[#0d9221] 
                     rounded-[10px] hover:bg-[#2db40c]">
                         Register
-                    </button>
+                    </button></a>
                 </div>
             </nav>
         </div>
