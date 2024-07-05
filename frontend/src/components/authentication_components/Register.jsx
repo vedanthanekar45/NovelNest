@@ -15,6 +15,9 @@ function Register() {
         axios.post('http://localhost:3000/register', {firstName, lastName, email, username, password})
         .then((result) => console.log(result))
         .catch((err) => console.log(err))
+        if (username) {
+            console.log("User registered!");
+        }
         navigate('/login')
     }
 
