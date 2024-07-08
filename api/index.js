@@ -5,13 +5,14 @@ const userModel = require('./models/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
-require('dotenv').config
+const dotenv = require('dotenv');
 
 const port = 3000;
 const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
+dotenv.config({path: "./.env"});
 
 mongoose.connect("mongodb://localhost:27017/NovelNest");
 
@@ -80,7 +81,6 @@ app.post('/register', async (req, res) => {
         user.token = token;
         user.password = undefined;
 
-        res.status(201).json(user);
     } catch (error) {
         console.log(error);
     }
