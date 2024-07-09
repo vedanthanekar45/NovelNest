@@ -31,23 +31,20 @@ app.post('/login', async (req, res) => {
         
         // Generate a token for user
         jwt.sign(
-            {id: user._id, email: user.email}, process.env.jwtSecret
-        );
-        user.token = token
-        use.password = undefined
-
-        // Send user in user cookie
-        const options = {
-            expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+            {id: user._id, email: user.email}, process.env.jwtSecret,
+            {expiresIn: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)}
             /* The numbers above convert the days into milliseconds. In
             place of 3, we can replace the number of days we want the cookie to be active */
-            httpOnly: true
-        };
-        res.status(200).cookie("token", token, options).json({
+        );
+        
+        // Send user in cookie
+        res.status(200).cookie("token", token, {httpOnly: true}).json({
             success: true,
             token,
             user
         })
+
+        user.password = undefined
         res.status(201).json(user);
     } else {
         res.status(401).send("User not found!");
@@ -56,11 +53,11 @@ app.post('/login', async (req, res) => {
 })
 
 app.post('/register', async (req, res) => {
-    const {firstname, lastname, email, username, password} = req.body;
+    const {firstName, lastName, email, username, password} = req.body;
 
     try {
         // Checking if all fields are field completely, if not throw a message --->
-        if (!(firstname && lastname && email && username && password)) {
+        if (!(firstName && lastName && email && username && password)) {
             res.status(401).send("All fields are important !")
         }
 
@@ -69,8 +66,8 @@ app.post('/register', async (req, res) => {
 
         // Create the user in the database
         const user = await userModel.create({
-            firstname,
-            lastname,
+            firstName,
+            lastName,
             email,
             username,
             password: encPassword

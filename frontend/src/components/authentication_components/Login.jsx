@@ -9,7 +9,7 @@ function Login() {
 
     function createUser(event) {
         event.preventDefault()
-        axios.post('http://localhost:3000/register', {username, password})
+        axios.post('http://localhost:3000/login', {username, password})
         .then((result) => console.log(result))
         .catch((err) => console.log(err))
         navigate('/')
