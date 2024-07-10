@@ -1,12 +1,14 @@
+import BlogElement from "../blog_components/blogelement"
+
 function Blog() {
     return (
         <div>
             <div className="blog-title items-center h-auto">
                 <h1 className="text-green-700 text-7xl text-center mt-20"> Explore Blog Posts </h1>
             </div>
-            <div className="blog-tile">
-                <h3 className="blog-title text-2xl mt-20 text-center">
-                    There are currently no blog posts to show. Get started by adding one!
+            <div>
+                <h3 className="blog-title text-2xl mt-16">
+                    <BlogElement />
                 </h3>
             </div>
             <div className="blog-butt flex justify-center">
