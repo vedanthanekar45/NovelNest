@@ -30,10 +30,11 @@ app.post('/login', async (req, res) => {
     if (user && (await bcrypt.compare(password, user.password))) {
         
         // Generate a token for user
-        jwt.sign(
+        const token = jwt.sign(
             {id: user._id, email: user.email}, process.env.jwtSecret,
-            {expiresIn: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)}
-            /* The numbers above convert the days into milliseconds. In
+            {expiresIn: '1h'}
+            /* {expiresIn: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)}
+             The numbers above convert the days into milliseconds. In
             place of 3, we can replace the number of days we want the cookie to be active */
         );
         
