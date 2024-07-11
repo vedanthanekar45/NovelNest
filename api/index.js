@@ -45,8 +45,7 @@ app.post('/login', async (req, res) => {
             user
         })
 
-        user.password = undefined
-        res.status(201).json(user);
+        user.password = undefined;
     } else {
         res.status(401).send("User not found!");
     }

@@ -2,6 +2,9 @@ import React from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
 
+var navBarUser = ''
+var isLoggedin = false;
+
 function Login() {
     const [username, setUsername] = React.useState("");
     const [password, setPassword] = React.useState("");
@@ -12,6 +15,8 @@ function Login() {
         axios.post('http://localhost:3000/login', {username, password})
         .then((response) => {
             console.log(response.data)
+            navBarUser = username
+            isLoggedin = true
             navigate('/')
         })
         .catch((err) => console.log(err))
@@ -48,4 +53,4 @@ function Login() {
     )
 }
 
-export default Login;
+export {Login, isLoggedin, navBarUser};
