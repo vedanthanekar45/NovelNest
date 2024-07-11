@@ -11,6 +11,7 @@ function Homepage() {
       <Gallery />
       <Info />
       <Blog />
+      
     </div>
   );
 }

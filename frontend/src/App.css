@@ -79,14 +79,6 @@ nav {
   border-radius: 15px;
 }
 
-.blog-image {
-  object-fit: contain;
-  height: 370px;
-  width: 450px;
-  margin-left: 50px;
-  margin-top: 25px; 
-}
-
 /* CSS FOR LOGIN PAGE */
 .login-box {
   width: 500px;
