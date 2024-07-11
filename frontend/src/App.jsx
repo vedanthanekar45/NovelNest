@@ -1,6 +1,6 @@
 import Homepage from "./components/Homepage"
 import Register from "./components/authentication_components/Register"
-import Login from "./components/authentication_components/Login"
+import {Login} from "./components/authentication_components/Login"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import './App.css'
 
