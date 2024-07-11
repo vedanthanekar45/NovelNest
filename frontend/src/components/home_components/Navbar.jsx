@@ -57,8 +57,8 @@ function Navbar() {
                         <a href="#"><h3 className="webpage-butt text-xl text-center hover:text-[#0d9221]">
                             About Us
                         </h3></a>
-                        <h3 className="login-butt">
-                            Welcome <a href="#">{navBarUser}</a>
+                        <h3 className="login-butt mt-10">
+                            <a className="text-xl ml-12 hover:underline hover:text-green-600" href="#">{navBarUser}</a>
                         </h3>
                     </div>
                 </nav>
