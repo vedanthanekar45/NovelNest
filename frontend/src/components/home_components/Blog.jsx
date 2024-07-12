@@ -4,7 +4,7 @@ function Blog() {
     return (
         <div>
             <div className="blog-title items-center h-auto">
-                <h1 className="text-green-700 text-7xl text-center mt-20"> Explore User Threads </h1>
+                <h1 className="text-green-700 text-7xl text-center mt-20"> Explore Recent Threads </h1>
             </div>
             <div>
                 <h3 className="blog-title text-2xl mt-16">

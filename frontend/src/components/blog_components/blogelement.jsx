@@ -2,7 +2,7 @@ function blogElement() {
     return (
         <div className="blog-tile">
             <div className="info-part">
-                <div className="user text-xl ml-4">
+                <div className="user text-xl mt-4 ml-4">
                     <h5>By <a className="hover:underline hover:text-green-700" href="#">vedanthanekar888</a></h5>
                 </div>
                 <div className="blog-title ml-4 mt-4 text-5xl">
