@@ -32,24 +32,32 @@ app.post('/login', async (req, res) => {
         // Generate a token for user
         const token = jwt.sign(
             {id: user._id, email: user.email}, process.env.jwtSecret,
-            {expiresIn: '1h'}
+            {expiresIn: '1h'}, (err, token) => {
+                // Send user in cookie
+                res.status(200).cookie("token", token, {httpOnly: true}).json({
+                    success: true,
+                    token,
+                    user
+                })
+            }
             /* {expiresIn: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)}
              The numbers above convert the days into milliseconds. In
             place of 3, we can replace the number of days we want the cookie to be active */
         );
-        
-        // Send user in cookie
-        res.status(200).cookie("token", token, {httpOnly: true}).json({
-            success: true,
-            token,
-            user
-        })
 
         user.password = undefined;
     } else {
         res.status(401).send("User not found!");
     }
 
+})
+
+app.get('/profile', (req, res) => {
+    const {token} = req.cookies
+    jwt.verify((token, process.env.jwtSecret, {}, (err, info) => {
+        if (err) throw err;
+        res.json(info);
+    }));
 })
 
 app.post('/register', async (req, res) => {
