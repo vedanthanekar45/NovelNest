@@ -1,7 +1,4 @@
-import {isLoggedin, navBarUser} from "../authentication_components/Login"
-
-function Navbar() {
-    if(!isLoggedin) {
+if(!isLoggedin) {
         return (
             <div>
                 <nav className="bg-white">

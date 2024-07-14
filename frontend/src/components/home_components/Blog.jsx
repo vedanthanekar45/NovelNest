@@ -12,15 +12,18 @@ function Blog() {
                     <BlogElement />
                     <BlogElement />
                     <BlogElement />
+                    <BlogElement />
+                    <BlogElement />
+                    <BlogElement />
                 </h3>
             </div>
             <div className="blog-butt flex justify-center">
-                <button className="w-56 mt-12 h-16 text-white cursor-pointer outline-none 
-                border-none text-base text-center font-bold transition-all 
+                <a href='/createpost'><button className="w-64 mt-12 h-16 text-white cursor-pointer outline-none 
+                border-none text-xl text-center font-bold transition-all 
                 duration-300 ease-linear relative bg-[#216b12] 
                 rounded-[40px] hover:bg-[#268d2a]">
-                    + Create a new thread
-                </button>
+                    + Create a New Thread
+                </button></a>
             </div>
             <div className="h-14"></div>
         </div>
