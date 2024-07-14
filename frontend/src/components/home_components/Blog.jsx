@@ -7,7 +7,10 @@ function Blog() {
                 <h1 className="text-green-700 text-7xl text-center mt-20"> Explore Recent Threads </h1>
             </div>
             <div>
-                <h3 className="blog-title text-2xl mt-16">
+                <h3 className="text-2xl mt-16">
+                    <BlogElement />
+                    <BlogElement />
+                    <BlogElement />
                     <BlogElement />
                     <BlogElement />
                     <BlogElement />
