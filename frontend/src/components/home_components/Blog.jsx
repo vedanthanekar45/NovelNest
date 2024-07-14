@@ -15,12 +15,12 @@ function Blog() {
                 </h3>
             </div>
             <div className="blog-butt flex justify-center">
-                <button className="w-64 mt-12 h-16 text-white cursor-pointer outline-none 
+                <a href='/createpost'><button className="w-64 mt-12 h-16 text-white cursor-pointer outline-none 
                 border-none text-xl text-center font-bold transition-all 
                 duration-300 ease-linear relative bg-[#216b12] 
                 rounded-[40px] hover:bg-[#268d2a]">
                     + Create a New Thread
-                </button>
+                </button></a>
             </div>
             <div className="h-14"></div>
         </div>

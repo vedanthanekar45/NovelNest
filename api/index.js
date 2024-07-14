@@ -52,12 +52,24 @@ app.post('/login', async (req, res) => {
 
 })
 
-app.get('/profile', (req, res) => {
-    const {token} = req.cookies
-    jwt.verify((token, process.env.jwtSecret, {}, (err, info) => {
-        if (err) throw err;
-        res.json(info);
-    }));
+const verifyUser = (req, res, next) => {
+    const token = req.cookies.token;
+    if(!token) {
+        res.json("The token is missing")
+    } else {
+        jwt.verify(token, process.env.jwtSecret, (err, decoded) => {
+            if(err) {
+                return res.json("The token is wrong")
+            } else {
+                req.username = decoded.username;
+                next();
+            }
+        })
+    }
+}
+
+app.get('/', verifyUser, (req, res) => {
+    return res.json({username: req.username})
 })
 
 app.post('/register', async (req, res) => {
