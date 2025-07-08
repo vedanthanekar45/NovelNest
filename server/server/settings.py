@@ -30,7 +30,11 @@ SECRET_KEY = 'django-insecure-opy3@u3ehv_&!o)hsz@4e#!5yn!yx)@h8v9ex^e+od&fl4289)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'novelnest-3a4r.onrender.com',
+    'localhost',
+    '127.0.0.1'
+]
 
 
 # Application definition
