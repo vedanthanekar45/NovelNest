@@ -1,61 +1,61 @@
 export const categorylist = {
     art: {   
-        image: "/assets/categoryPics/art.jpg", 
+        image: "../../public/assets/categoryPics/art.jpg", 
         title: "ART", 
         link: "#"
     },
     bio: {
-        image: "/assets/categoryPics/biography.jpg", 
+        image: "../../public/assets/categoryPics/biography.jpg", 
         title: "BIOGRAPHY", 
         link: "#"
     },
     children: {
-        image: "/assets/categoryPics/childrens.jpg", 
+        image: "../../public/assets/categoryPics/childrens.jpg", 
         title: "CHILDREN'S", 
         link: "#"
     },
     classics: {
-        image: "/assets/categoryPics/classics.jpg",
+        image: "../../public/assets/categoryPics/classics.jpg",
         title: "CLASSICS", 
         link: "#"
     },
     fantasy: {
-        image: "/assets/categoryPics/fantasy.jpg", 
+        image: "../../public/assets/categoryPics/fantasy.jpg", 
         title: "FANTASY", 
         link: "#"
     },
     history: {
-        image: "/assets/categoryPics/history.jpg", 
+        image: "../../public/assets/categoryPics/history.jpg", 
         title: "HISTORY", 
         link: "#"
     },
     horror: {
-        image: "/assets/categoryPics/horror.jpg", 
+        image: "../../public/assets/categoryPics/horror.jpg", 
         title: "HORROR", 
         link: "#"
     },
     mystery: {
-        image: "/assets/categoryPics/mystery.jpg", 
+        image: "../../public/assets/categoryPics/mystery.jpg", 
         title: "MYSTERY", 
         link: "#"
     },
     nonfiction: {
-        image: "/assets/categoryPics/nonfiction.jpg", 
+        image: "../../public/assets/categoryPics/nonfiction.jpg", 
         title: "NON-FICTION", 
         link: "#"
     },
     poetry: {
-        image: "/assets/categoryPics/poetry.jpg", 
+        image: "../../public/assets/categoryPics/poetry.jpg", 
         title: "POETRY", 
         link: "#"
     },
     scifi: {
-        image: "/assets/categoryPics/scifi.jpg", 
+        image: "../../public/assets/categoryPics/scifi.jpg", 
         title: "SCIENCE-FICTION", 
         link: "#"
     },
     selfhelp: {
-        image: "/assets/categoryPics/selfhelp.jpg", 
+        image: "../../public/assets/categoryPics/selfhelp.jpg", 
         title: "SELF-HELP", 
         link: "#"
     }
