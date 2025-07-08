@@ -20,7 +20,7 @@ export default function Otpverify() {
         e.preventDefault()
         setIsLoading(true)
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/verify-otp/', {email, otp}, {
+            const response = await axios.post(`${process.env.API_URL}/verify-otp/`, {email, otp}, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -46,7 +46,7 @@ export default function Otpverify() {
 
     const sendOtp = async () => {
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/send-otp/', {email}, {
+            const response = await axios.post(`${process.env.API_URL}/send-otp/`, {email}, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

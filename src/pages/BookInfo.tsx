@@ -48,7 +48,7 @@ export default function BookInfo() {
       navigate('/signin', {state: {from: location.pathname}})
     } else {
       const token = localStorage.getItem('token');
-      axios.post("http://127.0.0.1:8000/log_book/", {
+      axios.post(`${process.env.API_URL}log_book/`, {
         "google_book_id": id,
         "title": book?.volumeInfo.title,
         "thumbnail_url": book?.volumeInfo.imageLinks?.smallThumbnail,
@@ -74,7 +74,7 @@ export default function BookInfo() {
       navigate('/signin', {state: {from: location.pathname}})
     } else {
       const token = localStorage.getItem('token');
-      axios.post("http://127.0.0.1:8000/log_book/", {
+      axios.post(`${process.env.API_URL}/log_book/`, {
         "google_book_id": id,
         "title": book?.volumeInfo.title,
         "thumbnail_url": book?.volumeInfo.imageLinks?.smallThumbnail,
@@ -103,8 +103,8 @@ export default function BookInfo() {
     const fetchBookDetails = async () => {
       try {
         setLoading(true)
-        const response = await fetch(`http://127.0.0.1:8000/get_book_data/?id=${id}/`);
-        console.log("Fetching book from:", `http://127.0.0.1:8000/bookinfo/${id}/`);
+        const response = await fetch(`${process.env.API_URL}/get_book_data/?id=${id}/`);
+        console.log("Fetching book from:", `${process.env.API_URL}/bookinfo/${id}/`);
         const data = await response.json();
         setBook(data.items ? data.items[0] : data);
       } catch (error: any) {
@@ -119,7 +119,7 @@ export default function BookInfo() {
       const token = localStorage.getItem('token');
       if (!token) return;
       try {
-        const res = await axios.get(`http://127.0.0.1:8000/check_book_read/${id}`, {
+        const res = await axios.get(`${process.env.API_URL}/check_book_read/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

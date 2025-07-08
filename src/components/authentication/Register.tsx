@@ -5,7 +5,7 @@ import LoadingDots from "../animations/LoadingDots";
 
 // const sendOtp = async (email: string) => {
 //     try {
-//         const response = await axios.post('http://127.0.0.1:8000/api/send-otp/', {email}, {
+        // const response = await axios.post(`${process.env.API_URL}/send-otp/`, {email}, {
 //             headers: {
 //                 'Content-Type': 'application/json'
 //             }
@@ -17,7 +17,6 @@ import LoadingDots from "../animations/LoadingDots";
 // }
 
 function Register() {
-    // const navigate = useNavigate();
 
     const [fullName, setFullName] = React.useState('');
     const [email, setEmail] = React.useState('');
@@ -30,7 +29,7 @@ function Register() {
         e.preventDefault();
         setIsLoading(true)
         try {
-            const response = await axios.post('http://127.0.0.1:8000/register/', {
+            const response = await axios.post(`${process.env.API_URL}/register/`, {
                 full_name: fullName,
                 email,
                 username,
@@ -58,8 +57,7 @@ function Register() {
         }
     };
 
-    // Password Show or Hide
-    const [showPassword, setShowPassword] = React.useState(false); // State to toggle visibility
+    const [showPassword, setShowPassword] = React.useState(false);
     const handleCheckboxChange = () => {
       setShowPassword(!showPassword);
     };

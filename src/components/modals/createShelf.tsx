@@ -18,7 +18,7 @@ export default function CreateShelf({ isOpen, onClose }: createShelfModalProps) 
         const token = localStorage.getItem('token')
 
         try {
-            const response = await axios.post("http://127.0.0.1:8000/create_shelf/", {
+            const response = await axios.post(`${process.env.API_URL}/create_shelf/`, {
                 title: shelfName, description: shelfDescription
             }, {
                 headers: {

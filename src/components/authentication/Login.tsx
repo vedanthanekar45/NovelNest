@@ -17,7 +17,7 @@ function Login() {
         e.preventDefault();
         setIsLoading(true);
         try {
-            const response = await axios.post('http://127.0.0.1:8000/login/', {username, password}, {withCredentials: true});
+            const response = await axios.post(`${process.env.API_URL}/login/`, {username, password}, {withCredentials: true});
             if (response.status === 200) {
                 setLoggedIn(true);
                 localStorage.setItem("token", response.data.access)

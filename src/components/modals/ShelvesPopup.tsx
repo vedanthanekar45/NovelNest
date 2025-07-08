@@ -33,7 +33,7 @@ export default function ShelvesPopup({ isOpen, bookId, onClose }: ModalProps) {
     useEffect(() => {
         if (!loggedIn) navigate('/signin', { state: { from: location.pathname } })
         const token = localStorage.getItem("token"); // or however you store your access token
-        axios.get("http://127.0.0.1:8000/get_user_shelves", {
+        axios.get(`${process.env.API_URL}/get_user_shelves`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -56,7 +56,7 @@ export default function ShelvesPopup({ isOpen, bookId, onClose }: ModalProps) {
         try {
             await Promise.all(
                 selectedShelves.map(async (shelfId) => {
-                    const res = await axios.post(`http://127.0.0.1:8000/add_book_to_shelf/?id=${book_id}&shelf_id=${shelfId}`, {}, {
+                    const res = await axios.post(`${process.env.API_URL}/add_book_to_shelf/?id=${book_id}&shelf_id=${shelfId}`, {}, {
                         headers: {
                             Authorization: `Bearer ${token}`,
                         }

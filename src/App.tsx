@@ -10,10 +10,8 @@ import JournalPage from './components/journal/journalPage'
 import Search from './pages/Search'
 import BookInfo from './pages/BookInfo'
 import { AuthProvider } from './auth/authContext'
-// import axios from 'axios'
 
 function App() {
-
   return (
     <div>
       <AuthProvider>
