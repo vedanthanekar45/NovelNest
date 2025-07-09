@@ -9,10 +9,10 @@ import Welcome from "../components/homepage/Welcome";
 // import Genres from "../components/homepage/Genres"
 import Footer from "../components/homepage/Footer"
 import Journals from "../components/homepage/Journals";
-import bookcover11 from "../../public/assets/tpodg.jpg"
-import bookcover12 from "../../public/assets/demons.jpg"
-import bookcover21 from "../../public/assets/ttbp.jpg"
-import bookcover22 from "../../public/assets/1984.jpg"
+import bookcover11 from "/assets/tpodg.jpg"
+import bookcover12 from "/assets/demons.jpg"
+import bookcover21 from "/assets/ttbp.jpg"
+import bookcover22 from "/assets/1984.jpg"
 import { useAuth } from "../auth/useAuth.ts";
 
 export default function Homepage() {
