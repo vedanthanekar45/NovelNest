@@ -3,9 +3,11 @@ import axios from "axios";
 // import { useNavigate } from 'react-router-dom'
 import LoadingDots from "../animations/LoadingDots";
 
+const apiBase = import.meta.env.VITE_API_URL;
+
 // const sendOtp = async (email: string) => {
 //     try {
-        // const response = await axios.post(`${process.env.API_URL}/send-otp/`, {email}, {
+        // const response = await axios.post(`${apiBase}/send-otp/`, {email}, {
 //             headers: {
 //                 'Content-Type': 'application/json'
 //             }
@@ -29,7 +31,7 @@ function Register() {
         e.preventDefault();
         setIsLoading(true)
         try {
-            const response = await axios.post(`${process.env.API_URL}/register/`, {
+            const response = await axios.post(`${apiBase}/register/`, {
                 full_name: fullName,
                 email,
                 username,

@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+const apiBase = import.meta.env.VITE_API_URL;
+
 export default async function refreshAccessToken() {
     try {
-        const response = await axios.post(`${process.env.API_URL}/token/refresh/`);
+        const response = await axios.post(`${apiBase}/token/refresh/`);
         const newAccessToken = response.data.access;
         localStorage.setItem("accessToken", newAccessToken)
         return newAccessToken;

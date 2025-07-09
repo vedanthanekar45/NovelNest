@@ -42,13 +42,14 @@ export default function BookInfo() {
   const navigate = useNavigate()
   const location = useLocation()
 
+  const apiBase = import.meta.env.VITE_API_URL;
 
   const markAsRead = () => {
     if (!loggedIn) {
       navigate('/signin', {state: {from: location.pathname}})
     } else {
       const token = localStorage.getItem('token');
-      axios.post(`${process.env.API_URL}log_book/`, {
+      axios.post(`${apiBase}log_book/`, {
         "google_book_id": id,
         "title": book?.volumeInfo.title,
         "thumbnail_url": book?.volumeInfo.imageLinks?.smallThumbnail,
@@ -74,7 +75,7 @@ export default function BookInfo() {
       navigate('/signin', {state: {from: location.pathname}})
     } else {
       const token = localStorage.getItem('token');
-      axios.post(`${process.env.API_URL}/log_book/`, {
+      axios.post(`${apiBase}/log_book/`, {
         "google_book_id": id,
         "title": book?.volumeInfo.title,
         "thumbnail_url": book?.volumeInfo.imageLinks?.smallThumbnail,
@@ -103,8 +104,8 @@ export default function BookInfo() {
     const fetchBookDetails = async () => {
       try {
         setLoading(true)
-        const response = await fetch(`${process.env.API_URL}/get_book_data/?id=${id}/`);
-        console.log("Fetching book from:", `${process.env.API_URL}/bookinfo/${id}/`);
+        const response = await fetch(`${apiBase}/get_book_data/?id=${id}/`);
+        console.log("Fetching book from:", `${apiBase}/bookinfo/${id}/`);
         const data = await response.json();
         setBook(data.items ? data.items[0] : data);
       } catch (error: any) {
@@ -119,7 +120,7 @@ export default function BookInfo() {
       const token = localStorage.getItem('token');
       if (!token) return;
       try {
-        const res = await axios.get(`${process.env.API_URL}/check_book_read/${id}`, {
+        const res = await axios.get(`${apiBase}/check_book_read/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

@@ -18,6 +18,8 @@ type bookType = {
     };
 };
 
+const apiBase = import.meta.env.VITE_API_URL;
+
 export default function Search () {
 
     const [isLoading, setIsLoading] = React.useState(true)
@@ -28,7 +30,7 @@ export default function Search () {
             setIsLoading(true);
             if (!searchQuery) return;
             try {
-                const response = await fetch(`${process.env.API_URL}/search/?query=${query}`);
+                const response = await fetch(`${apiBase}/search/?query=${query}`);
                 const data = await response.json();
                 setBooks(data.items || []);
             } catch (error) {

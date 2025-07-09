@@ -5,6 +5,8 @@ import LoadingDots from "../animations/LoadingDots";
 import { useAuth } from "../../auth/useAuth";
 import { toast } from "react-hot-toast";
 
+const apiBase = import.meta.env.VITE_API_URL;
+
 export default function Otpverify() {
 
     const navigate = useNavigate();
@@ -20,7 +22,7 @@ export default function Otpverify() {
         e.preventDefault()
         setIsLoading(true)
         try {
-            const response = await axios.post(`${process.env.API_URL}/verify-otp/`, {email, otp}, {
+            const response = await axios.post(`${apiBase}/verify-otp/`, {email, otp}, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -46,7 +48,7 @@ export default function Otpverify() {
 
     const sendOtp = async () => {
         try {
-            const response = await axios.post(`${process.env.API_URL}/send-otp/`, {email}, {
+            const response = await axios.post(`${apiBase}/send-otp/`, {email}, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
