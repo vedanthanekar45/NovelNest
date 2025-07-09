@@ -9,7 +9,7 @@ import Footer from "../homepage/Footer";
 export default function JournalPage() {
     return (
         <div className="flex flex-col items-center">
-            <Banner source="/assets/gallery6.jpg" />
+            <Banner />
             <Navbar className="flex absolute" />
             <JournalTitle title="Leave Hogwarts Behind For These 9 Iconic Alternatives" />
             <JournalAuthor authorName="By: Howard Hamlin" />
